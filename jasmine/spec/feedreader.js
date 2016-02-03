@@ -71,9 +71,9 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it('changes visibility when the menu is toggled', function(){
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
@@ -96,10 +96,31 @@ $(function() {
             done();     
         });
     });
-    /* TODO: Write a new test suite named "New Feed Selection"
-
+    /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        var initialFeed, newFeed;
+
+        beforeEach(function(done){
+            loadFeed(1,function(){
+            initialFeed = $('.feed h2').html();
+            done();
+            });
+        });
+
+         beforeEach(function(done){
+            loadFeed(2,function(){
+            newFeed = $('.feed h2').html();
+            done();
+            });
+        });
+        
+        it('content changes', function(done){
+            expect(initialFeed).not.toBe(newFeed);
+            done();     
+        });
+    });
 }());
