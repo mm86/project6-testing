@@ -106,7 +106,7 @@ $(function() {
 
         it('feed consists at least of a single .entry element', function(done){
             expect($('.entry').length).toBeGreaterThan(0);
-            done();     
+            done();
         });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
@@ -157,7 +157,7 @@ $(function() {
         
         it('are clickable', function(done){
             expect(randomFeed).not.toBe(undefined);
-            done();     
+            done();
         });
     });
 
