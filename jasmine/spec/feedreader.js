@@ -140,7 +140,7 @@ $(function() {
     /* Extra test suite for exceeds expectations.
        TODO: Write a new test suite named "Feed Links" */
     describe('Feed Links', function() {
-        /* TODO: Write a test that ensures that each feed is clickable
+        /* TODO: Write a test that ensures that feeds are clickable
          * Remember, loadFeed() is asynchronous.
          */
         var randomFeed;
