@@ -72,7 +72,7 @@ $(function() {
           */
         //step 1: default state: item is hidden
         //step 2: if clicked, display true; if clicked again, display false
-        it('changes visibility when the menu icon is clicked', function(){
+        it('changes visibility when the menu is toggled', function(){
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.menu-icon-link').trigger('click');
