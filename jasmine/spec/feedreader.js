@@ -50,6 +50,19 @@ $(function() {
                 expect(allFeeds[i].name).not.toBe(null);
             }
         });
+
+
+        /* Future Feature test for exceeds expectations category:
+         * TODO: Write a test that loops through each feed
+         * in the allFeeds object and ensures it has a date defined
+         * and that the date is not empty.
+         */
+        it('dates are defined', function(){
+            for(var i = 0; i < allFeeds.length; i++){
+                expect(allFeeds[i].date).toBeDefined();
+                expect(allFeeds[i].date).not.toBe(null);
+            }
+        });
     });
 
 
@@ -123,4 +136,30 @@ $(function() {
             done();     
         });
     });
+
+    /* Extra test suite for exceeds expectations.
+       TODO: Write a new test suite named "Feed Links" */
+    describe('Feed Links', function() {
+        /* TODO: Write a test that ensures that each feed is clickable
+         * Remember, loadFeed() is asynchronous.
+         */
+        var randomFeed;
+        var randomNumber = Math.floor(Math.random() * 11) + 0;
+        var feedLength;
+        beforeEach(function(done){
+            loadFeed(2,function(){
+            feedLength = $('.entry').length;
+            randomNumber = Math.floor(Math.random() * feedLength) + 0;
+            randomFeed = $('.feed a').eq(randomNumber).attr("href");
+            done();
+            });
+        });
+        
+        it('are clickable', function(done){
+            expect(randomFeed).not.toBe(undefined);
+            done();     
+        });
+    });
+
+
 }());
