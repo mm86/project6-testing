@@ -29,6 +29,7 @@ var allFeeds = [
  */
 function init() {
     // Load the first feed we've defined (index of 0).
+
     loadFeed(0);
 }
 
@@ -41,6 +42,7 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
+
      var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 
@@ -94,8 +96,9 @@ google.setOnLoadCallback(init);
  * until the DOM is ready.
  */
 $(function() {
+
     var container = $('.feed'),
-        feedList = $('.feed-list'),
+        feedList = $('.feed-list'),//within sliding menu
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
         feedId = 0,
         menuIcon = $('.menu-icon-link');
@@ -109,7 +112,6 @@ $(function() {
     allFeeds.forEach(function(feed) {
         feed.id = feedId;
         feedList.append(feedItemTemplate(feed));
-
         feedId++;
     });
 
@@ -119,7 +121,6 @@ $(function() {
      */
     feedList.on('click', 'a', function() {
         var item = $(this);
-
         $('body').addClass('menu-hidden');
         loadFeed(item.data('id'));
         return false;
