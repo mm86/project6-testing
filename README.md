@@ -8,10 +8,11 @@ Download or clone this repository. Open the index.html to run the application. T
 
 <h3>What are the tests covered for this project?</h3>
 
-1. Test suite 'RSS Feeds' checks if the name and url properties of the allFeeds object are defined and not empty.
-2. Test suite 'The menu' checks if the menu is hidden by default and the menu changes visibility when the menu icon is clicked.
-3. Test suite 'Initial Entries' ensures that there exists at least one .entry element within the .feed container when the loadFeed function is called. Since loadFeed() is asynchronous, Jasmine's beforeEach and done() functions are used.
-4. Test suite 'New Feed Selection' checks if the content actually changes when a new feed is loaded by the loadFeed function.
+1. Test suite 'Future Feature' checks if there is a date property in the allFeeds object. The dates property displays the time and day of the year the article was published.
+2. Test suite 'RSS Feeds' checks if the name, url and date properties of the allFeeds object are defined and not empty.
+3. Test suite 'The menu' checks if the menu is hidden by default and the menu changes visibility when the menu icon is clicked.
+4. Test suite 'Initial Entries' ensures that there exists at least one .entry element within the .feed container when the loadFeed function is called. Since loadFeed() is asynchronous, Jasmine's beforeEach and done() functions are used.
+5. Test suite 'New Feed Selection' checks if the content actually changes when a new feed is loaded by the loadFeed function.
 
 <h3>Extra tests for exceeds expectations:</h3>
 
