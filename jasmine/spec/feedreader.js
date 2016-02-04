@@ -8,7 +8,7 @@ $(function() {
 
     /* Exceeds Expectations: Test suite "Future Feature" - this suite tests the workings 
      * of a future feature 'dates'. Dates property represents the day and 
-     * time the article was published.
+     * time articles were published.
      */
     describe('Future feature', function() {
         /* Spec loops through the allFeeds object and 
