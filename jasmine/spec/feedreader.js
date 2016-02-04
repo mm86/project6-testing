@@ -5,6 +5,23 @@
  */
 
 $(function() {
+
+    /* Exceeds Expectations: Test suite "Future Feature" - this suite tests the workings 
+     * of a future feature 'dates'. Dates property represents the day and 
+     * time the article was published.
+     */
+    describe('Future feature', function() {
+        /* Spec loops through the allFeeds object and 
+         * checks to see if the dates are of the correct format.
+         */
+        it('dates property displays date and time', function(){
+            for(var i = 0; i < allFeeds.length; i++){
+                expect(allFeeds[i].date).toBeDate();
+            }
+        });
+    });
+
+
     /* Test suite 'RSS Feeds' - this suite contains tests related to the RSS Feeds properties
      * namely, URL, name and date. 
      */
@@ -39,8 +56,7 @@ $(function() {
         });
 
 
-        /* Future Feature test for exceeds expectations category:
-         * Spec 'dates are defined' loops through the allFeeds object and 
+        /* Spec 'dates are defined' loops through the allFeeds object and 
          * checks to make sure the dates are defined and not empty.
          */
         it('dates are defined', function(){
@@ -50,11 +66,7 @@ $(function() {
             }
         });
 
-        it('dates property displays date and time', function(){
-            for(var i = 0; i < allFeeds.length; i++){
-                expect(allFeeds[i].date).toBeDefined();
-            }
-        });
+
     });
 
 
