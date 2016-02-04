@@ -33,8 +33,8 @@ $(function() {
          */
         it('URLs are defined', function(){
             for(var i = 0; i < allFeeds.length; i++){
-                expect(allFeeds[i]).toBeDefined();
-                expect(allFeeds[i].url).not.toBe(null);
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url).not.toBe('');
             }
         });
 
@@ -47,7 +47,7 @@ $(function() {
         it('names are defined', function(){
             for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBe(null);
+                expect(allFeeds[i].name).not.toBe('');
             }
         });
 
@@ -60,7 +60,7 @@ $(function() {
         it('dates are defined', function(){
             for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].date).toBeDefined();
-                expect(allFeeds[i].date).not.toBe(null);
+                expect(allFeeds[i].date).not.toBe('');
             }
         });
     });
